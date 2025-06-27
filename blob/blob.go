@@ -67,6 +67,7 @@ import (
 	"bytes"
 	"context"
 	"crypto/md5"
+	"errors"
 	"fmt"
 	"hash"
 	"io"
@@ -80,6 +81,7 @@ import (
 	"time"
 	"unicode/utf8"
 
+	"cloud.google.com/go/storage"
 	"go.opentelemetry.io/otel/metric"
 	"gocloud.dev/blob/driver"
 	"gocloud.dev/gcerrors"
@@ -872,6 +874,9 @@ func (b *Bucket) Exists(ctx context.Context, key string) (bool, error) {
 		return true, nil
 	}
 	if gcerrors.Code(err) == gcerrors.NotFound {
+		return false, nil
+	}
+	if errors.Is(err, storage.ErrObjectNotExist) {
 		return false, nil
 	}
 	return false, err

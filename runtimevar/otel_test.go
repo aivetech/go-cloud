@@ -16,10 +16,11 @@ package runtimevar_test
 
 import (
 	"context"
-	"gocloud.dev/internal/testing/oteltest"
-	"gocloud.dev/runtimevar/constantvar"
 	"testing"
 	"time"
+
+	"gocloud.dev/internal/testing/oteltest"
+	"gocloud.dev/runtimevar/constantvar"
 )
 
 func TestOpenTelemetry(t *testing.T) {

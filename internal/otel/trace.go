@@ -17,6 +17,9 @@ package otel
 import (
 	"context"
 	"fmt"
+	"reflect"
+	"time"
+
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
@@ -24,8 +27,6 @@ import (
 	"go.opentelemetry.io/otel/trace"
 	"go.opentelemetry.io/otel/trace/noop"
 	"gocloud.dev/gcerrors"
-	"reflect"
-	"time"
 )
 
 // Common attribute keys used across the Go CDK

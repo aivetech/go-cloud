@@ -17,13 +17,14 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"google.golang.org/grpc/codes"
 	"net/url"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
+
+	"google.golang.org/grpc/codes"
 
 	"github.com/google/go-cmp/cmp"
 	"gocloud.dev/gcerrors"

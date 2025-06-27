@@ -8,9 +8,12 @@ package main
 
 import (
 	"context"
-	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource"
 	"database/sql"
 	"fmt"
+	"net/http"
+	"net/url"
+
+	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource"
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/container"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/ssm"
@@ -36,9 +39,7 @@ import (
 	"gocloud.dev/server/requestlog"
 	"gocloud.dev/server/sdserver"
 	"gocloud.dev/server/xrayserver"
-	"google.golang.org/genproto/googleapis/cloud/runtimeconfig/v1beta1"
-	"net/http"
-	"net/url"
+	runtimeconfig "google.golang.org/genproto/googleapis/cloud/runtimeconfig/v1beta1"
 )
 
 // Injectors from inject_aws.go:

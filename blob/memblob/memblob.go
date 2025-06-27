@@ -33,7 +33,6 @@ import (
 	"crypto/md5"
 	"errors"
 	"fmt"
-	"gocloud.dev/internal/gcerr"
 	"hash"
 	"io"
 	"net/url"
@@ -41,6 +40,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"gocloud.dev/internal/gcerr"
 
 	"gocloud.dev/blob"
 	"gocloud.dev/blob/driver"
