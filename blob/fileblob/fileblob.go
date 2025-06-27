@@ -36,7 +36,7 @@
 // For blob.OpenBucket, fileblob registers for the scheme "file".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Escaping
 //
@@ -60,7 +60,7 @@
 //   - Attributes: os.FileInfo
 //   - CopyOptions.BeforeCopy: *os.File
 //   - WriterOptions.BeforeWrite: *os.File
-package fileblob // import "gocloud.dev/blob/fileblob"
+package fileblob // import "github.com/aivetech/gocloud.dev/blob/fileblob"
 
 import (
 	"context"
@@ -81,11 +81,11 @@ import (
 	"sync"
 	"time"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/escape"
-	"gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/escape"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 )
 
 const defaultPageSize = 1000

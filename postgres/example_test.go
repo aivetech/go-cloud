@@ -18,12 +18,12 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/postgres"
+	"github.com/aivetech/gocloud.dev/postgres"
 )
 
 func ExampleOpen() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Replace this with your actual settings.

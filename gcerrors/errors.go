@@ -20,7 +20,7 @@ import (
 	"context"
 	"errors"
 
-	"gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 )
 
 // An ErrorCode describes the error's category. Programs should act upon an error's

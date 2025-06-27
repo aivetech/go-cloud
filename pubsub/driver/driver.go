@@ -15,12 +15,12 @@
 // Package driver defines interfaces to be implemented by pubsub drivers, which
 // will be used by the pubsub package to interact with the underlying services.
 // Application code should use package pubsub.
-package driver // import "gocloud.dev/pubsub/driver"
+package driver // import "github.com/aivetech/gocloud.dev/pubsub/driver"
 
 import (
 	"context"
 
-	"gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcerrors"
 )
 
 // AckID is the identifier of a message for purposes of acknowledgement.
@@ -64,7 +64,7 @@ type Message struct {
 	// The callback must be called exactly once, before the message is sent.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	BeforeSend func(asFunc func(any) bool) error
 
 	// AfterSend is a callback used when sending a message. It should remain
@@ -74,7 +74,7 @@ type Message struct {
 	// If Send returns an error, AfterSend will not be called.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	AfterSend func(asFunc func(any) bool) error
 }
 
@@ -116,11 +116,11 @@ type Topic interface {
 	IsRetryable(err error) bool
 
 	// As allows drivers to expose driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	As(i any) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for errors.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	ErrorAs(error, any) bool
 
 	// ErrorCode should return a code that describes the error, which was returned by
@@ -203,11 +203,11 @@ type Subscription interface {
 	IsRetryable(err error) bool
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	As(i any) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for errors.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	ErrorAs(error, any) bool
 
 	// ErrorCode should return a code that describes the error, which was returned by

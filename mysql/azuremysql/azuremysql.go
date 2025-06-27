@@ -21,8 +21,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package azuremysql // import "gocloud.dev/mysql/azuremysql"
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
+package azuremysql // import "github.com/aivetech/gocloud.dev/mysql/azuremysql"
 
 import (
 	"context"
@@ -34,11 +34,11 @@ import (
 	"strings"
 
 	"github.com/XSAM/otelsql"
+	"github.com/aivetech/gocloud.dev/azure/azuredb"
+	cdkmysql "github.com/aivetech/gocloud.dev/mysql"
 	"github.com/go-sql-driver/mysql"
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
-	"gocloud.dev/azure/azuredb"
-	cdkmysql "gocloud.dev/mysql"
 )
 
 // URLOpener opens Azure MySQL URLs

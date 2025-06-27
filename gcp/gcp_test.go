@@ -18,8 +18,8 @@ import (
 	"context"
 	"testing"
 
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
 )
 
 func TestNewHTTPClient(t *testing.T) {

@@ -22,10 +22,10 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	_ "github.com/aivetech/gocloud.dev/pubsub/mempubsub"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/blob"
-	"gocloud.dev/pubsub"
-	_ "gocloud.dev/pubsub/mempubsub"
 )
 
 func TestHandleRequest(t *testing.T) {

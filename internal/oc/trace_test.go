@@ -27,8 +27,8 @@ func TestProviderName(t *testing.T) {
 		want string
 	}{
 		{nil, ""},
-		{testDriver{}, "gocloud.dev/internal/oc"},
-		{&testDriver{}, "gocloud.dev/internal/oc"},
+		{testDriver{}, "github.com/aivetech/gocloud.dev/internal/oc"},
+		{&testDriver{}, "github.com/aivetech/gocloud.dev/internal/oc"},
 		{regexp.Regexp{}, "regexp"},
 	} {
 		got := ProviderName(test.in)

@@ -23,14 +23,14 @@
 // "HTTPVAR_AUTH_USERNAME" and "HTTPVAR_AUTH_PASSWORD".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // httpvar exposes the following types for As:
 //   - Snapshot: *http.Response
 //   - Error: httpvar.RequestError, url.Error
-package httpvar // import "gocloud.dev/runtimevar/httpvar"
+package httpvar // import "github.com/aivetech/gocloud.dev/runtimevar/httpvar"
 
 import (
 	"bytes"
@@ -42,10 +42,10 @@ import (
 	"os"
 	"time"
 
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 )
 
 func init() {

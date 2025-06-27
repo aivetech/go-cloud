@@ -18,12 +18,12 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/localsecrets"
+	"github.com/aivetech/gocloud.dev/secrets"
+	"github.com/aivetech/gocloud.dev/secrets/localsecrets"
 )
 
 func ExampleNewKeeper() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
 
 	secretKey, err := localsecrets.NewRandomKey()
 	if err != nil {
@@ -34,11 +34,11 @@ func ExampleNewKeeper() {
 }
 
 func Example_openFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
 
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/secrets/localsecrets"
+	// PRAGMA: On github.com/aivetech/gocloud.dev, add a blank import: _ "github.com/aivetech/gocloud.dev/secrets/localsecrets"
 
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Using "base64key://", a new random key will be generated.

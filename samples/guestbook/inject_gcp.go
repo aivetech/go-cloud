@@ -23,15 +23,15 @@ import (
 	"fmt"
 	"net/url"
 
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/gcsblob"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/gcp/gcpcloud"
+	"github.com/aivetech/gocloud.dev/mysql/gcpmysql"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/gcpruntimeconfig"
+	"github.com/aivetech/gocloud.dev/server"
 	"github.com/google/wire"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/gcsblob"
-	"gocloud.dev/gcp"
-	"gocloud.dev/gcp/gcpcloud"
-	"gocloud.dev/mysql/gcpmysql"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/gcpruntimeconfig"
-	"gocloud.dev/server"
 	pb "google.golang.org/genproto/googleapis/cloud/runtimeconfig/v1beta1"
 )
 

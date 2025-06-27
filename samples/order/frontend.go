@@ -28,14 +28,14 @@ import (
 	"strings"
 	"time"
 
-	"gocloud.dev/blob"
-	_ "gocloud.dev/blob/fileblob"
-	"gocloud.dev/docstore"
-	_ "gocloud.dev/docstore/memdocstore"
-	"gocloud.dev/pubsub"
-	_ "gocloud.dev/pubsub/mempubsub"
-	"gocloud.dev/server"
-	"gocloud.dev/server/requestlog"
+	"github.com/aivetech/gocloud.dev/blob"
+	_ "github.com/aivetech/gocloud.dev/blob/fileblob"
+	"github.com/aivetech/gocloud.dev/docstore"
+	_ "github.com/aivetech/gocloud.dev/docstore/memdocstore"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	_ "github.com/aivetech/gocloud.dev/pubsub/mempubsub"
+	"github.com/aivetech/gocloud.dev/server"
+	"github.com/aivetech/gocloud.dev/server/requestlog"
 )
 
 // A frontend is a web server that takes image-processing orders.

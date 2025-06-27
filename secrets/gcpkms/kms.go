@@ -23,13 +23,13 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // gcpkms exposes the following type for As:
 //   - Error: *google.golang.org/grpc/status.Status
-package gcpkms // import "gocloud.dev/secrets/gcpkms"
+package gcpkms // import "github.com/aivetech/gocloud.dev/secrets/gcpkms"
 
 import (
 	"context"
@@ -40,12 +40,12 @@ import (
 
 	cloudkms "cloud.google.com/go/kms/apiv1"
 	"cloud.google.com/go/kms/apiv1/kmspb"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/useragent"
+	"github.com/aivetech/gocloud.dev/secrets"
 	"github.com/google/wire"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/secrets"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc/status"
 )

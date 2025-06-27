@@ -14,7 +14,7 @@
 
 // Package drivertest provides a conformance test for implementations of
 // runtimevar.
-package drivertest // import "gocloud.dev/runtimevar/drivertest"
+package drivertest // import "github.com/aivetech/gocloud.dev/runtimevar/drivertest"
 
 import (
 	"context"
@@ -22,11 +22,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
 )
 
 // Harness describes the functionality test harnesses must provide to run conformance tests.

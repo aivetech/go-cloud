@@ -20,9 +20,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcerrors"
 )
 
 type Book struct {

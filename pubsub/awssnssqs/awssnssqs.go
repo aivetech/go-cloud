@@ -28,13 +28,13 @@
 //
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Message Delivery Semantics
 //
 // AWS SQS supports at-least-once semantics; applications must call Message.Ack
 // after processing a message, or it will be redelivered.
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // # Escaping
@@ -61,7 +61,7 @@
 //   - Message.BeforeSend: *sns.PublishBatchRequestEntry or *sns.PublishInput (deprecated) for OpenSNSTopic, *sqstypes.SendMessageBatchRequestEntry for OpenSQSTopic
 //   - Message.AfterSend: snstypes.PublishBatchResultEntry or *sns.PublishOutput (deprecated) for OpenSNSTopic, sqstypes.SendMessageBatchResultEntry for OpenSQSTopic
 //   - Error: any error type returned by the service, notably smithy.APIError
-package awssnssqs // import "gocloud.dev/pubsub/awssnssqs"
+package awssnssqs // import "github.com/aivetech/gocloud.dev/pubsub/awssnssqs"
 
 import (
 	"context"
@@ -77,6 +77,12 @@ import (
 	"time"
 	"unicode/utf8"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/escape"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/sns"
 	snstypes "github.com/aws/aws-sdk-go-v2/service/sns/types"
@@ -84,12 +90,6 @@ import (
 	sqstypes "github.com/aws/aws-sdk-go-v2/service/sqs/types"
 	"github.com/aws/smithy-go"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/escape"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
 )
 
 const (
@@ -197,7 +197,7 @@ const SQSScheme = "awssqs"
 // For SQS topics and subscriptions, the URL's host+path is prefixed with
 // "https://" to create the queue URL.
 //
-// See https://pkg.go.dev/gocloud.dev/aws#V2ConfigFromURLParams.
+// See https://pkg.go.dev/github.com/aivetech/gocloud.dev/aws#V2ConfigFromURLParams.
 //
 // In addition, the following query parameters are supported:
 //
@@ -207,7 +207,7 @@ const SQSScheme = "awssqs"
 //     value must be parseable by `strconv.ParseBool`.
 //   - waittime: sets SubscriberOptions.WaitTime, in time.ParseDuration formats.
 //
-// See gocloud.dev/aws/ConfigFromURLParams for other query parameters
+// See github.com/aivetech/gocloud.dev/aws/ConfigFromURLParams for other query parameters
 // that affect the default AWS session.
 type URLOpener struct {
 	// TopicOptions specifies the options to pass to OpenTopic.
@@ -388,8 +388,8 @@ func maybeEncodeBody(body []byte, opt BodyBase64Encoding) (string, bool) {
 // For example, to set a deduplication ID and message group ID on a message:
 //
 //	import (
-//		"gocloud.dev/pubsub"
-//		"gocloud.dev/pubsub/awssnssqs"
+//		"github.com/aivetech/gocloud.dev/pubsub"
+//		"github.com/aivetech/gocloud.dev/pubsub/awssnssqs"
 //	)
 //
 //	message := pubsub.Message{

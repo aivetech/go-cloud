@@ -24,23 +24,23 @@ import (
 	"os"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/runtimevar"
 	"github.com/google/subcommands"
-	"gocloud.dev/runtimevar"
 
 	// Import the runtimevar driver packages we want to be able to open.
-	_ "gocloud.dev/runtimevar/awsparamstore"
-	_ "gocloud.dev/runtimevar/blobvar"
-	_ "gocloud.dev/runtimevar/constantvar"
-	_ "gocloud.dev/runtimevar/filevar"
-	_ "gocloud.dev/runtimevar/gcpruntimeconfig"
-	_ "gocloud.dev/runtimevar/httpvar"
+	_ "github.com/aivetech/gocloud.dev/runtimevar/awsparamstore"
+	_ "github.com/aivetech/gocloud.dev/runtimevar/blobvar"
+	_ "github.com/aivetech/gocloud.dev/runtimevar/constantvar"
+	_ "github.com/aivetech/gocloud.dev/runtimevar/filevar"
+	_ "github.com/aivetech/gocloud.dev/runtimevar/gcpruntimeconfig"
+	_ "github.com/aivetech/gocloud.dev/runtimevar/httpvar"
 )
 
 const helpSuffix = `
 
-  See https://gocloud.dev/concepts/urls/ for more background on
-  Go CDK URLs, and sub-packages under gocloud.dev/runtimevar
-  (https://godoc.org/gocloud.dev/runtimevar#pkg-subdirectories)
+  See https://github.com/aivetech/gocloud.dev/concepts/urls/ for more background on
+  Go CDK URLs, and sub-packages under github.com/aivetech/gocloud.dev/runtimevar
+  (https://godoc.org/github.com/aivetech/gocloud.dev/runtimevar#pkg-subdirectories)
   for details on the runtimevar.Variable URL format.
 `
 

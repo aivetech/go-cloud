@@ -23,7 +23,7 @@
 //
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Escaping
 //
@@ -53,7 +53,7 @@
 //   - SignedURLOptions.BeforeSign: *s3.GetObjectInput, when Options.Method == http.MethodGet, or
 //       *s3.PutObjectInput, when Options.Method == http.MethodPut
 
-package s3blob // import "gocloud.dev/blob/s3blob"
+package s3blob // import "github.com/aivetech/gocloud.dev/blob/s3blob"
 
 import (
 	"context"
@@ -68,18 +68,18 @@ import (
 	"strconv"
 	"strings"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/escape"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	s3manager "github.com/aws/aws-sdk-go-v2/feature/s3/manager"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
 	"github.com/aws/smithy-go"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/escape"
-	"gocloud.dev/internal/gcerr"
 )
 
 const defaultPageSize = 1000
@@ -113,7 +113,7 @@ const Scheme = "s3"
 //
 // The URL host is used as the bucket name.
 //
-// See https://pkg.go.dev/gocloud.dev/aws#V2ConfigFromURLParams.
+// See https://pkg.go.dev/github.com/aivetech/gocloud.dev/aws#V2ConfigFromURLParams.
 //
 // The following S3-specific query options are also supported:
 //   - ssetype: The type of server side encryption used (AES256, aws:kms, aws:kms:dsse)

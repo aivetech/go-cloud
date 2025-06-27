@@ -22,16 +22,16 @@ import (
 	"database/sql"
 	"net/url"
 
+	"github.com/aivetech/gocloud.dev/aws/awscloud"
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/s3blob"
+	"github.com/aivetech/gocloud.dev/mysql/awsmysql"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/awsparamstore"
+	"github.com/aivetech/gocloud.dev/server"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/ssm"
 	"github.com/google/wire"
-	"gocloud.dev/aws/awscloud"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/s3blob"
-	"gocloud.dev/mysql/awsmysql"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/awsparamstore"
-	"gocloud.dev/server"
 )
 
 // This file wires the generic interfaces up to Amazon Web Services (AWS). It

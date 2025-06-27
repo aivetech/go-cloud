@@ -26,14 +26,14 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // gcpsecretmanager exposes the following types for As:
 //   - Snapshot: *secretmanagerpb.AccessSecretVersionResponse
 //   - Error: *status.Status
-package gcpsecretmanager // import "gocloud.dev/runtimevar/gcpsecretmanager"
+package gcpsecretmanager // import "github.com/aivetech/gocloud.dev/runtimevar/gcpsecretmanager"
 
 import (
 	"bytes"
@@ -48,12 +48,12 @@ import (
 
 	secretmanager "cloud.google.com/go/secretmanager/apiv1"
 	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 	"github.com/google/wire"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

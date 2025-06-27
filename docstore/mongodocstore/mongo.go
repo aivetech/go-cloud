@@ -23,7 +23,7 @@
 // variable "MONGO_SERVER_URL".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Action Lists
 //
@@ -52,7 +52,7 @@
 // struct field names; other docstore drivers do not. This means that you have to choose
 // between interoperating with the MongoDB driver and interoperating with other docstore drivers.
 // See Options.LowercaseFields for more information.
-package mongodocstore // import "gocloud.dev/docstore/mongodocstore"
+package mongodocstore // import "github.com/aivetech/gocloud.dev/docstore/mongodocstore"
 
 // MongoDB reference manual: https://docs.mongodb.com/manual
 // Client documentation: https://godoc.org/go.mongodb.org/mongo-driver/mongo
@@ -65,15 +65,15 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/aivetech/gocloud.dev/docstore"
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 	"github.com/google/wire"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
 )
 
 // Dial returns a new mongoDB client that is connected to the server URI.

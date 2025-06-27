@@ -21,10 +21,10 @@ import (
 	"net/url"
 	"sync"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
+	"github.com/aivetech/gocloud.dev/docstore"
 	"github.com/aws/aws-sdk-go/aws/client"
 	dyn "github.com/aws/aws-sdk-go/service/dynamodb"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/docstore"
 )
 
 func init() {
@@ -72,7 +72,7 @@ const Scheme = "dynamodb"
 //   - allow_scans: if "true", allow table scans to be used for queries
 //   - consistent_read: if "true", a strongly consistent read is used whenever possible.
 //
-// See https://godoc.org/gocloud.dev/aws#ConfigFromURLParams for supported query
+// See https://godoc.org/github.com/aivetech/gocloud.dev/aws#ConfigFromURLParams for supported query
 // parameters for overriding the aws.Session from the URL.
 type URLOpener struct {
 	// ConfigProvider must be set to a non-nil value.

@@ -20,7 +20,7 @@ import (
 	"net/url"
 	"testing"
 
-	"gocloud.dev/internal/testing/terraform"
+	"github.com/aivetech/gocloud.dev/internal/testing/terraform"
 )
 
 func TestOpen(t *testing.T) {

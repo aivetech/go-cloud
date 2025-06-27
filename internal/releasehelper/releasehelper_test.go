@@ -25,25 +25,25 @@ import (
 // The following directory/file structure is created. ROOT is the root temp
 // directory created by the test.
 //
-// ROOT/go.mod          <-- main go.mod for gocloud.dev
-// ROOT/submod/go.mod   <-- go.mod for a submodule of gocloud.dev
+// ROOT/go.mod          <-- main go.mod for github.com/aivetech/gocloud.dev
+// ROOT/submod/go.mod   <-- go.mod for a submodule of github.com/aivetech/gocloud.dev
 // ROOT/samples/go.mod  <-- go.mod for "samples" that include both of the
 //
 //	other modules
-var mainGomod = []byte("module gocloud.dev\n")
+var mainGomod = []byte("module github.com/aivetech/gocloud.dev\n")
 
-var submodGomod = []byte(`module gocloud.dev/submod
+var submodGomod = []byte(`module github.com/aivetech/gocloud.dev/submod
 
 require (
-	gocloud.dev v0.15.0
+	github.com/aivetech/gocloud.dev v0.15.0
 )
 `)
 
-var samplesGomod = []byte(`module gocloud.dev/samples
+var samplesGomod = []byte(`module github.com/aivetech/gocloud.dev/samples
 
 require (
-	gocloud.dev v0.15.0
-	gocloud.dev/submod v0.15.0
+	github.com/aivetech/gocloud.dev v0.15.0
+	github.com/aivetech/gocloud.dev/submod v0.15.0
 )
 `)
 
@@ -88,8 +88,8 @@ func Test(t *testing.T) {
 	}
 
 	replaceLines := []string{
-		"replace gocloud.dev => " + filepath.Clean("../"),
-		"replace gocloud.dev/submod => " + filepath.Clean("../submod"),
+		"replace github.com/aivetech/gocloud.dev => " + filepath.Clean("../"),
+		"replace github.com/aivetech/gocloud.dev/submod => " + filepath.Clean("../submod"),
 	}
 
 	for _, line := range replaceLines {
@@ -118,7 +118,7 @@ func Test(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if !strings.Contains(string(c), "gocloud.dev v1.8.99") || !strings.Contains(string(c), "gocloud.dev/submod v1.8.99") {
+	if !strings.Contains(string(c), "github.com/aivetech/gocloud.dev v1.8.99") || !strings.Contains(string(c), "github.com/aivetech/gocloud.dev/submod v1.8.99") {
 		t.Error("New versions for require not found in samples/go.mod")
 	}
 }

@@ -18,14 +18,14 @@ import (
 	"context"
 	"log"
 
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/awsparamstore"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/ssm"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/awsparamstore"
 )
 
 func ExampleOpenVariable() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
 
 	// Establish a AWS V2 Config.
 	// See https://aws.github.io/aws-sdk-go-v2/docs/configuring-sdk/ for more info.
@@ -45,9 +45,9 @@ func ExampleOpenVariable() {
 }
 
 func Example_openVariableFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/runtimevar/awsparamstore"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, add a blank import: _ "github.com/aivetech/gocloud.dev/runtimevar/awsparamstore"
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// runtimevar.OpenVariable creates a *runtimevar.Variable from a URL.

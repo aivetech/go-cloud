@@ -23,8 +23,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package awspostgres // import "gocloud.dev/postgres/awspostgres"
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
+package awspostgres // import "github.com/aivetech/gocloud.dev/postgres/awspostgres"
 
 import (
 	"context"
@@ -38,11 +38,11 @@ import (
 	"time"
 
 	"github.com/XSAM/otelsql"
+	"github.com/aivetech/gocloud.dev/aws/rds"
+	"github.com/aivetech/gocloud.dev/postgres"
 	"github.com/lib/pq"
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
-	"gocloud.dev/aws/rds"
-	"gocloud.dev/postgres"
 )
 
 // URLOpener opens RDS PostgreSQL URLs

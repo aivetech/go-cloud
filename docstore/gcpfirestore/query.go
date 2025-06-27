@@ -27,8 +27,8 @@ import (
 	"time"
 
 	pb "cloud.google.com/go/firestore/apiv1/firestorepb"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 )
 

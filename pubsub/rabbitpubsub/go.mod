@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/pubsub/rabbitpubsub
+module github.com/aivetech/gocloud.dev/pubsub/rabbitpubsub
 
 go 1.24
 
 require (
 	github.com/rabbitmq/amqp091-go v1.10.0
-	gocloud.dev v0.41.0
+	github.com/aivetech/gocloud.dev v0.41.0
 )
 
 require (
@@ -74,4 +74,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace gocloud.dev => ../../
+replace github.com/aivetech/gocloud.dev => ../../

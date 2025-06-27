@@ -1,4 +1,4 @@
-module gocloud.dev/internal/website
+module github.com/aivetech/gocloud.dev/internal/website
 
 go 1.23.0
 

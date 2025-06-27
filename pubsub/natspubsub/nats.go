@@ -46,13 +46,13 @@
 //
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Message Delivery Semantics
 //
 // NATS supports at-most-semantics; applications need not call Message.Ack,
 // and must not call Message.Nack.
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // # As
@@ -63,7 +63,7 @@
 //   - Message.BeforeSend: None for v1, *nats.Msg for v2.
 //   - Message.AfterSend: None.
 //   - Message: *nats.Msg
-package natspubsub // import "gocloud.dev/pubsub/natspubsub"
+package natspubsub // import "github.com/aivetech/gocloud.dev/pubsub/natspubsub"
 
 import (
 	"bytes"
@@ -82,10 +82,10 @@ import (
 
 	"github.com/nats-io/nats.go"
 
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 )
 
 var errNotInitialized = errors.New("natspubsub: topic not initialized")

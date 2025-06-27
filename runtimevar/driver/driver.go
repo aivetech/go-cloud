@@ -15,13 +15,13 @@
 // Package driver defines interfaces to be implemented by runtimevar drivers, which
 // will be used by the runtimevar package to interact with the underlying services.
 // Application code should use package runtimevar.
-package driver // import "gocloud.dev/runtimevar/driver"
+package driver // import "github.com/aivetech/gocloud.dev/runtimevar/driver"
 
 import (
 	"context"
 	"time"
 
-	"gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcerrors"
 )
 
 // DefaultWaitDuration is the default value for WaitDuration.
@@ -43,7 +43,7 @@ type State interface {
 	UpdateTime() time.Time
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	As(any) bool
 }
 

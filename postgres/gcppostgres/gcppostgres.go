@@ -24,8 +24,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package gcppostgres // import "gocloud.dev/postgres/gcppostgres"
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
+package gcppostgres // import "github.com/aivetech/gocloud.dev/postgres/gcppostgres"
 
 import (
 	"context"
@@ -41,12 +41,12 @@ import (
 
 	"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/proxy"
 	"github.com/XSAM/otelsql"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/gcp/cloudsql"
+	"github.com/aivetech/gocloud.dev/postgres"
 	"github.com/lib/pq"
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
-	"gocloud.dev/gcp"
-	"gocloud.dev/gcp/cloudsql"
-	"gocloud.dev/postgres"
 )
 
 // Scheme is the URL scheme gcppostgres registers its URLOpener under on

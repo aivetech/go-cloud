@@ -23,8 +23,8 @@ import (
 	"reflect"
 	"strconv"
 
-	"gocloud.dev/docstore/internal/fields"
-	"gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/docstore/internal/fields"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 	"google.golang.org/protobuf/proto"
 )
 

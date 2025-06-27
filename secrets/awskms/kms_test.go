@@ -21,14 +21,14 @@ import (
 	"net/url"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/secrets"
+	"github.com/aivetech/gocloud.dev/secrets/driver"
+	"github.com/aivetech/gocloud.dev/secrets/drivertest"
 	"github.com/aws/aws-sdk-go-v2/service/kms"
 	"github.com/aws/aws-sdk-go-v2/service/kms/types"
 	"github.com/aws/smithy-go"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/driver"
-	"gocloud.dev/secrets/drivertest"
 )
 
 const (

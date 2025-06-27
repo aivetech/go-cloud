@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/runtimevar/etcdvar
+module github.com/aivetech/gocloud.dev/runtimevar/etcdvar
 
 go 1.24
 
@@ -20,7 +20,7 @@ require (
 	github.com/google/go-cmp v0.7.0
 	go.etcd.io/etcd v3.3.27+incompatible
 	go.etcd.io/etcd/client/v3 v3.5.21
-	gocloud.dev v0.41.0
+	github.com/aivetech/gocloud.dev v0.41.0
 	google.golang.org/grpc v1.71.1
 )
 
@@ -84,4 +84,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace gocloud.dev => ../../
+replace github.com/aivetech/gocloud.dev => ../../

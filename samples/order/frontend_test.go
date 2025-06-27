@@ -24,7 +24,7 @@ import (
 	"testing"
 	"time"
 
-	"gocloud.dev/docstore"
+	"github.com/aivetech/gocloud.dev/docstore"
 )
 
 func TestOrderForm(t *testing.T) {

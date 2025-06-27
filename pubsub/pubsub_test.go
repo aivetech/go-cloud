@@ -17,7 +17,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"google.golang.org/grpc/codes"
 	"net/url"
 	"strings"
 	"sync"
@@ -25,12 +24,14 @@ import (
 	"testing"
 	"time"
 
+	"google.golang.org/grpc/codes"
+
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/testing/oteltest"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/testing/oteltest"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
 )
 
 type driverTopic struct {

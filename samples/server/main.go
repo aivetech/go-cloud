@@ -26,11 +26,11 @@ import (
 	"sync"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/server"
+	"github.com/aivetech/gocloud.dev/server/health"
+	"github.com/aivetech/gocloud.dev/server/sdserver"
 	"go.opencensus.io/trace"
-	"gocloud.dev/gcp"
-	"gocloud.dev/server"
-	"gocloud.dev/server/health"
-	"gocloud.dev/server/sdserver"
 )
 
 // GlobalMonitoredResource implements monitoredresource.Interface to provide a

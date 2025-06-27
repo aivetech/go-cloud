@@ -23,8 +23,8 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/aivetech/gocloud.dev/docstore"
 	"go.mongodb.org/mongo-driver/mongo"
-	"gocloud.dev/docstore"
 )
 
 func init() {

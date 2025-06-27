@@ -23,13 +23,13 @@
 //
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // awskms exposes the following type for As:
 //   - Error: any error type returned by the service, notably smithy.APIError
-package awskms // import "gocloud.dev/secrets/awskms"
+package awskms // import "github.com/aivetech/gocloud.dev/secrets/awskms"
 
 import (
 	"context"
@@ -40,15 +40,15 @@ import (
 	"strings"
 	"sync"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/secrets"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/kms"
 	"github.com/aws/aws-sdk-go-v2/service/kms/types"
 	"github.com/aws/smithy-go"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/secrets"
 )
 
 func init() {
@@ -91,7 +91,7 @@ const Scheme = "awskms"
 // for more details. Note that ARNs may contain ":" characters, which cannot be
 // escaped in the Host part of a URL, so the "awskms:///<ARN>" form should be used.
 //
-// See https://pkg.go.dev/gocloud.dev/aws#V2ConfigFromURLParams.
+// See https://pkg.go.dev/github.com/aivetech/gocloud.dev/aws#V2ConfigFromURLParams.
 //
 // EncryptionContext key/value pairs can be provided by providing URL parameters prefixed
 // with "context_"; e.g., "...&context_abc=foo&context_def=bar" would result in

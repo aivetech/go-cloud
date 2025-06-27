@@ -18,14 +18,14 @@ import (
 	"context"
 	"log"
 
-	"gocloud.dev/postgres"
-	_ "gocloud.dev/postgres/awspostgres"
+	"github.com/aivetech/gocloud.dev/postgres"
+	_ "github.com/aivetech/gocloud.dev/postgres/awspostgres"
 )
 
 func Example() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/postgres/awspostgres"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, add a blank import: _ "github.com/aivetech/gocloud.dev/postgres/awspostgres"
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// Replace these with your actual settings.

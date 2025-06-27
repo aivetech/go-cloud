@@ -17,10 +17,11 @@ package oteltest
 
 import (
 	"context"
-	iotel "gocloud.dev/internal/otel"
 	"sync"
 	"testing"
 	"time"
+
+	iotel "github.com/aivetech/gocloud.dev/internal/otel"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"

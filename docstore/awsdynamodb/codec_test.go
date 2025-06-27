@@ -18,12 +18,12 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/docstore/drivertest"
 	dyn "github.com/aws/aws-sdk-go/service/dynamodb"
 	dynattr "github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/docstore/drivertest"
 )
 
 func TestEncodeValue(t *testing.T) {

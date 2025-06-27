@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package setup // import "gocloud.dev/internal/testing/setup"
+package setup // import "github.com/aivetech/gocloud.dev/internal/testing/setup"
 
 import (
 	"context"
@@ -31,8 +31,8 @@ import (
 	awsv2config "github.com/aws/aws-sdk-go-v2/config"
 	awsv2creds "github.com/aws/aws-sdk-go-v2/credentials"
 
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/useragent"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/useragent"
 
 	"github.com/google/go-replayers/grpcreplay"
 	"github.com/google/go-replayers/httpreplay"

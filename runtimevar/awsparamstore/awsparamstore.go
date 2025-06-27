@@ -25,14 +25,14 @@
 //
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // awsparamstore exposes the following types for As:
 //   - Snapshot: *ssm.GetParameterOutput
 //   - Error: any error type returned by the service, notably smithy.APIError
-package awsparamstore // import "gocloud.dev/runtimevar/awsparamstore"
+package awsparamstore // import "github.com/aivetech/gocloud.dev/runtimevar/awsparamstore"
 
 import (
 	"context"
@@ -44,14 +44,14 @@ import (
 	"sync"
 	"time"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/ssm"
 	"github.com/aws/smithy-go"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
 )
 
 func init() {
@@ -70,7 +70,7 @@ func Dial(cfg aws.Config) *ssm.Client {
 
 // URLOpener opens AWS Paramstore URLs like "awsparamstore://myvar".
 //
-// See https://pkg.go.dev/gocloud.dev/aws#V2ConfigFromURLParams.
+// See https://pkg.go.dev/github.com/aivetech/gocloud.dev/aws#V2ConfigFromURLParams.
 //
 // In addition, the following URL parameters are supported:
 //   - decoder: The decoder to use. Defaults to URLOpener.Decoder, or

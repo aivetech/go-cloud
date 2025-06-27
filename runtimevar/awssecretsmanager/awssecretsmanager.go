@@ -24,14 +24,14 @@
 //
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // awssecretsmanager exposes the following types for As:
 //   - Snapshot: *secretsmanager.GetSecretValueOutput, *secretsmanager.DescribeSecretOutput
 //   - Error: any error type returned by the service, notably smithy.APIError
-package awssecretsmanager // import "gocloud.dev/runtimevar/awssecretsmanager"
+package awssecretsmanager // import "github.com/aivetech/gocloud.dev/runtimevar/awssecretsmanager"
 
 import (
 	"context"
@@ -43,15 +43,15 @@ import (
 	"sync"
 	"time"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/secretsmanager"
 	"github.com/aws/aws-sdk-go-v2/service/secretsmanager/types"
 	"github.com/aws/smithy-go"
 	"github.com/google/wire"
-	gcaws "gocloud.dev/aws"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
 )
 
 func init() {
@@ -71,7 +71,7 @@ func Dial(cfg aws.Config) *secretsmanager.Client {
 // URLOpener opens AWS Secrets Manager URLs like "awssecretsmanager://my-secret-var-name".
 // A friendly name of the secret must be specified. You can NOT specify the Amazon Resource Name (ARN).
 //
-// See https://pkg.go.dev/gocloud.dev/aws#V2ConfigFromURLParams.
+// See https://pkg.go.dev/github.com/aivetech/gocloud.dev/aws#V2ConfigFromURLParams.
 //
 // In addition, the following URL parameters are supported:
 //   - decoder: The decoder to use. Defaults to URLOpener.Decoder, or

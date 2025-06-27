@@ -20,11 +20,11 @@ import (
 	"reflect"
 	"testing"
 
+	gcaws "github.com/aivetech/gocloud.dev/aws"
 	awsv2 "github.com/aws/aws-sdk-go-v2/aws"
 	awsv2retry "github.com/aws/aws-sdk-go-v2/aws/retry"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/google/go-cmp/cmp"
-	gcaws "gocloud.dev/aws"
 )
 
 func TestConfigFromURLParams(t *testing.T) {

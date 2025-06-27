@@ -14,7 +14,7 @@
 
 // Package drivertest provides a conformance test for implementations of
 // driver.
-package drivertest // import "gocloud.dev/blob/drivertest"
+package drivertest // import "github.com/aivetech/gocloud.dev/blob/drivertest"
 
 import (
 	"bytes"
@@ -36,12 +36,12 @@ import (
 	"testing/iotest"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/escape"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/escape"
 )
 
 // Harness descibes the functionality test harnesses must provide to run

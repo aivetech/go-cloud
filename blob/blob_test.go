@@ -25,10 +25,10 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/blob/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/blob/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
 )
 
 var (

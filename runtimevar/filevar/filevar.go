@@ -32,12 +32,12 @@
 // For runtimevar.OpenVariable, filevar registers for the scheme "file".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // filevar does not support any types for As.
-package filevar // import "gocloud.dev/runtimevar/filevar"
+package filevar // import "github.com/aivetech/gocloud.dev/runtimevar/filevar"
 
 import (
 	"bytes"
@@ -50,10 +50,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 	"github.com/fsnotify/fsnotify"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
 )
 
 func init() {

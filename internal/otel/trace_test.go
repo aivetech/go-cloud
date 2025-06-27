@@ -27,8 +27,8 @@ func TestProviderName(t *testing.T) {
 		want   string
 	}{
 		{"nil", nil, ""},
-		{"struct", testDriver{}, "gocloud.dev/internal/otel"},
-		{"pointer", &testDriver{}, "gocloud.dev/internal/otel"},
+		{"struct", testDriver{}, "github.com/aivetech/gocloud.dev/internal/otel"},
+		{"pointer", &testDriver{}, "github.com/aivetech/gocloud.dev/internal/otel"},
 	}
 
 	for _, tc := range testCases {

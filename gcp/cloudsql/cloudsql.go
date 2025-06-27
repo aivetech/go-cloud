@@ -14,13 +14,13 @@
 
 // Package cloudsql contains Wire providers that are common across Google Cloud
 // SQL.
-package cloudsql // import "gocloud.dev/gcp/cloudsql"
+package cloudsql // import "github.com/aivetech/gocloud.dev/gcp/cloudsql"
 
 import (
 	"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/certs"
 	"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/proxy"
+	"github.com/aivetech/gocloud.dev/gcp"
 	"github.com/google/wire"
-	"gocloud.dev/gcp"
 	"golang.org/x/oauth2"
 )
 

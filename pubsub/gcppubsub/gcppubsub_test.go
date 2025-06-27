@@ -24,11 +24,11 @@ import (
 
 	raw "cloud.google.com/go/pubsub/apiv1"
 	"cloud.google.com/go/pubsub/apiv1/pubsubpb"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
-	"gocloud.dev/pubsub/drivertest"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/pubsub/drivertest"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

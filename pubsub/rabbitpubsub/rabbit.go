@@ -27,10 +27,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 	amqp "github.com/rabbitmq/amqp091-go"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
 )
 
 func init() {

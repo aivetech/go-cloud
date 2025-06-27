@@ -25,7 +25,7 @@
 // SERVICEBUS_CONNECTION_STRING takes precedence.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Message Delivery Semantics
 //
@@ -40,7 +40,7 @@
 // no-op, pubsub.Message.Nackable will return false, and pubsub.Message.Nack
 // will panic.
 //
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // # As
@@ -52,7 +52,7 @@
 //   - Message.AfterSend: None
 //   - Message: *servicebus.Message
 //   - Error: common.Retryable, *amqp.Error, *amqp.LinkError
-package azuresb // import "gocloud.dev/pubsub/azuresb"
+package azuresb // import "github.com/aivetech/gocloud.dev/pubsub/azuresb"
 
 import (
 	"context"
@@ -70,10 +70,10 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	servicebus "github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus"
 	"github.com/Azure/go-amqp"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 )
 
 const (

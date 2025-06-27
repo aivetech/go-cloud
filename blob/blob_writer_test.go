@@ -22,9 +22,9 @@ import (
 	"io"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/memblob"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/memblob"
 )
 
 // TestWriteReturnValues verifies that blob.Writer returns the correct n

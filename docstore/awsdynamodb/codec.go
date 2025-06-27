@@ -21,8 +21,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/docstore/driver"
 	dyn "github.com/aws/aws-sdk-go/service/dynamodb"
-	"gocloud.dev/docstore/driver"
 )
 
 var nullValue = new(dyn.AttributeValue).SetNULL(true)

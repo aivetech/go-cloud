@@ -14,17 +14,17 @@
 
 // Package sdserver provides the diagnostic hooks for a server using
 // Stackdriver.
-package sdserver // import "gocloud.dev/server/sdserver"
+package sdserver // import "github.com/aivetech/gocloud.dev/server/sdserver"
 
 import (
 	"fmt"
 	"os"
 
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/useragent"
+	"github.com/aivetech/gocloud.dev/server"
+	"github.com/aivetech/gocloud.dev/server/requestlog"
 	"github.com/google/wire"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/server"
-	"gocloud.dev/server/requestlog"
 
 	"contrib.go.opencensus.io/exporter/stackdriver"
 	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource"

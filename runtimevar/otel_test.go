@@ -16,10 +16,11 @@ package runtimevar_test
 
 import (
 	"context"
-	"gocloud.dev/internal/testing/oteltest"
-	"gocloud.dev/runtimevar/constantvar"
 	"testing"
 	"time"
+
+	"github.com/aivetech/gocloud.dev/internal/testing/oteltest"
+	"github.com/aivetech/gocloud.dev/runtimevar/constantvar"
 )
 
 func TestOpenTelemetry(t *testing.T) {
@@ -37,13 +38,13 @@ func TestOpenTelemetry(t *testing.T) {
 	_, _ = v.Watch(cctx)
 
 	// Check for spans
-	const driver = "gocloud.dev/runtimevar/constantvar"
+	const driver = "github.com/aivetech/gocloud.dev/runtimevar/constantvar"
 
 	time.Sleep(2 * time.Second)
 	// Check metrics - during migration, we may need to look for different metric names
 	metrics := te.Metrics(ctx)
 	metricsFound := false
-	const metricName = "gocloud.dev/runtimevar/value_changes"
+	const metricName = "github.com/aivetech/gocloud.dev/runtimevar/value_changes"
 
 	for _, scopeMetric := range metrics {
 

@@ -32,7 +32,7 @@
 // set of server addresses.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Escaping
 //
@@ -50,7 +50,7 @@
 //   - Message.BeforeSend: *sarama.ProducerMessage
 //   - Message.AfterSend: None
 //   - Error: sarama.ConsumerError, sarama.ConsumerErrors, sarama.ProducerError, sarama.ProducerErrors, sarama.ConfigurationError, sarama.PacketDecodingError, sarama.PacketEncodingError, sarama.KError
-package kafkapubsub // import "gocloud.dev/pubsub/kafkapubsub"
+package kafkapubsub // import "github.com/aivetech/gocloud.dev/pubsub/kafkapubsub"
 
 import (
 	"context"
@@ -65,10 +65,10 @@ import (
 	"time"
 
 	"github.com/IBM/sarama"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 )
 
 var sendBatcherOpts = &batcher.Options{

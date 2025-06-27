@@ -19,8 +19,8 @@ import (
 	"os"
 	"testing"
 
-	"gocloud.dev/docstore/drivertest"
-	"gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/docstore/drivertest"
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
 )
 
 // Run conformance tests on Azure Cosmos.

@@ -24,8 +24,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package gcpmysql // import "gocloud.dev/mysql/gcpmysql"
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
+package gcpmysql // import "github.com/aivetech/gocloud.dev/mysql/gcpmysql"
 
 import (
 	"context"
@@ -39,12 +39,12 @@ import (
 
 	"github.com/GoogleCloudPlatform/cloudsql-proxy/proxy/proxy"
 	"github.com/XSAM/otelsql"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/gcp/cloudsql"
+	cdkmysql "github.com/aivetech/gocloud.dev/mysql"
 	"github.com/go-sql-driver/mysql"
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
-	"gocloud.dev/gcp"
-	"gocloud.dev/gcp/cloudsql"
-	cdkmysql "gocloud.dev/mysql"
 )
 
 // Scheme is the URL scheme gcpmysql registers its URLOpener under on
@@ -97,7 +97,7 @@ func (uo *URLOpener) OpenMySQLURL(ctx context.Context, u *url.URL) (*sql.DB, err
 	if uo.CertSource == nil {
 		return nil, fmt.Errorf("gcpmysql: URLOpener CertSource is nil")
 	}
-	dialerName := fmt.Sprintf("gocloud.dev/mysql/gcpmysql/%d",
+	dialerName := fmt.Sprintf("github.com/aivetech/gocloud.dev/mysql/gcpmysql/%d",
 		atomic.AddUint32(&dialerCounter, 1))
 	cfg, err := configFromURL(u, dialerName)
 	if err != nil {

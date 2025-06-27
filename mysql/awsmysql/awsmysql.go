@@ -23,8 +23,8 @@
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
 //
-// See https://gocloud.dev/concepts/urls/ for background information.
-package awsmysql // import "gocloud.dev/mysql/awsmysql"
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
+package awsmysql // import "github.com/aivetech/gocloud.dev/mysql/awsmysql"
 
 import (
 	"context"
@@ -35,12 +35,12 @@ import (
 	"net/url"
 
 	"github.com/XSAM/otelsql"
+	"github.com/aivetech/gocloud.dev/aws/rds"
+	gcmysql "github.com/aivetech/gocloud.dev/mysql"
 	"github.com/go-sql-driver/mysql"
 	"github.com/google/wire"
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
-	"gocloud.dev/aws/rds"
-	gcmysql "gocloud.dev/mysql"
 )
 
 // Set is a Wire provider set that provides a *sql.DB given

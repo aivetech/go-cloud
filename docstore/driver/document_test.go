@@ -20,8 +20,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/gcerrors"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/gcerrors"
 )
 
 type S struct {

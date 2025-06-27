@@ -13,12 +13,12 @@
 // limitations under the License.
 
 // Package azurecloud contains Wire providers for Azure services.
-package azurecloud // import "gocloud.dev/azure/azurecloud"
+package azurecloud // import "github.com/aivetech/gocloud.dev/azure/azurecloud"
 
 import (
+	"github.com/aivetech/gocloud.dev/blob/azureblob"
+	"github.com/aivetech/gocloud.dev/secrets/azurekeyvault"
 	"github.com/google/wire"
-	"gocloud.dev/blob/azureblob"
-	"gocloud.dev/secrets/azurekeyvault"
 )
 
 // Azure is a Wire provider set that includes the default wiring for all

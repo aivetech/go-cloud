@@ -22,12 +22,12 @@ import (
 	"testing"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/docstore/drivertest"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/docstore/drivertest"
 )
 
 func TestPlanQuery(t *testing.T) {

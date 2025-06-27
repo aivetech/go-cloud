@@ -25,19 +25,19 @@
 // for the scheme "mem".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # Message Delivery Semantics
 //
 // mempubsub supports at-least-once semantics; applications must
 // call Message.Ack after processing a message, or it will be redelivered.
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // # As
 //
 // mempubsub does not support any types for As.
-package mempubsub // import "gocloud.dev/pubsub/mempubsub"
+package mempubsub // import "github.com/aivetech/gocloud.dev/pubsub/mempubsub"
 
 import (
 	"context"
@@ -49,10 +49,10 @@ import (
 	"sync"
 	"time"
 
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 )
 
 func init() {

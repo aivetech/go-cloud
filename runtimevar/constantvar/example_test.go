@@ -21,8 +21,8 @@ import (
 	"log"
 	"os"
 
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/constantvar"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/constantvar"
 )
 
 func ExampleNew() {
@@ -94,9 +94,9 @@ func ExampleNewError() {
 }
 
 func Example_openVariableFromURL() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, add a blank import: _ "gocloud.dev/runtimevar/constantvar"
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, add a blank import: _ "github.com/aivetech/gocloud.dev/runtimevar/constantvar"
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 
 	// runtimevar.OpenVariable creates a *runtimevar.Variable from a URL.
@@ -113,7 +113,7 @@ func Example_openVariableFromURL() {
 		log.Fatal(err)
 	}
 	defer v2.Close()
-	// PRAGMA: On gocloud.dev, hide the rest of the function.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide the rest of the function.
 	snapshot, err := v.Latest(ctx)
 	if err != nil {
 		log.Fatal(err)

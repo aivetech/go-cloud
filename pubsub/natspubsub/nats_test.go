@@ -21,10 +21,10 @@ import (
 	"os"
 	"testing"
 
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
-	"gocloud.dev/pubsub/drivertest"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/pubsub/drivertest"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/nats-io/nats-server/v2/server"

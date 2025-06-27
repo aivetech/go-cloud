@@ -22,10 +22,10 @@ import (
 	"net/url"
 
 	"github.com/XSAM/otelsql"
+	"github.com/aivetech/gocloud.dev/internal/openurl"
 	"github.com/lib/pq"
 	"go.opentelemetry.io/otel/attribute"
 	semconv "go.opentelemetry.io/otel/semconv/v1.21.0"
-	"gocloud.dev/internal/openurl"
 )
 
 // Scheme is the URL scheme this package registers its URLOpener under on

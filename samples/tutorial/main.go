@@ -20,12 +20,12 @@ import (
 	"log"
 	"os"
 
-	"gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob"
 
 	// Import the blob packages we want to be able to open.
-	_ "gocloud.dev/blob/azureblob"
-	_ "gocloud.dev/blob/gcsblob"
-	_ "gocloud.dev/blob/s3blob"
+	_ "github.com/aivetech/gocloud.dev/blob/azureblob"
+	_ "github.com/aivetech/gocloud.dev/blob/gcsblob"
+	_ "github.com/aivetech/gocloud.dev/blob/s3blob"
 )
 
 func main() {

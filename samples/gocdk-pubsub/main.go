@@ -24,23 +24,23 @@ import (
 	"log"
 	"os"
 
+	"github.com/aivetech/gocloud.dev/pubsub"
 	"github.com/google/subcommands"
-	"gocloud.dev/pubsub"
 
 	// Import the pubsub driver packages we want to be able to open.
-	_ "gocloud.dev/pubsub/awssnssqs"
-	_ "gocloud.dev/pubsub/azuresb"
-	_ "gocloud.dev/pubsub/gcppubsub"
-	_ "gocloud.dev/pubsub/kafkapubsub"
-	_ "gocloud.dev/pubsub/natspubsub"
-	_ "gocloud.dev/pubsub/rabbitpubsub"
+	_ "github.com/aivetech/gocloud.dev/pubsub/awssnssqs"
+	_ "github.com/aivetech/gocloud.dev/pubsub/azuresb"
+	_ "github.com/aivetech/gocloud.dev/pubsub/gcppubsub"
+	_ "github.com/aivetech/gocloud.dev/pubsub/kafkapubsub"
+	_ "github.com/aivetech/gocloud.dev/pubsub/natspubsub"
+	_ "github.com/aivetech/gocloud.dev/pubsub/rabbitpubsub"
 )
 
 const helpSuffix = `
 
-  See https://gocloud.dev/concepts/urls/ for more background on
-  Go CDK URLs, and sub-packages under gocloud.dev/pubsub
-  (https://godoc.org/gocloud.dev/pubsub#pkg-subdirectories)
+  See https://github.com/aivetech/gocloud.dev/concepts/urls/ for more background on
+  Go CDK URLs, and sub-packages under github.com/aivetech/gocloud.dev/pubsub
+  (https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#pkg-subdirectories)
   for details on the topic/subscription URL format.
 `
 

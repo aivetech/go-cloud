@@ -25,11 +25,11 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	"github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys"
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/driver"
-	"gocloud.dev/secrets/drivertest"
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/internal/useragent"
+	"github.com/aivetech/gocloud.dev/secrets"
+	"github.com/aivetech/gocloud.dev/secrets/driver"
+	"github.com/aivetech/gocloud.dev/secrets/drivertest"
 )
 
 // Prerequisites for --record mode

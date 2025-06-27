@@ -24,21 +24,21 @@ import (
 	"log"
 	"os"
 
+	"github.com/aivetech/gocloud.dev/blob"
 	"github.com/google/subcommands"
-	"gocloud.dev/blob"
 
 	// Import the blob driver packages we want to be able to open.
-	_ "gocloud.dev/blob/azureblob"
-	_ "gocloud.dev/blob/fileblob"
-	_ "gocloud.dev/blob/gcsblob"
-	_ "gocloud.dev/blob/s3blob"
+	_ "github.com/aivetech/gocloud.dev/blob/azureblob"
+	_ "github.com/aivetech/gocloud.dev/blob/fileblob"
+	_ "github.com/aivetech/gocloud.dev/blob/gcsblob"
+	_ "github.com/aivetech/gocloud.dev/blob/s3blob"
 )
 
 const helpSuffix = `
 
-  See https://gocloud.dev/concepts/urls/ for more background on
-  Go CDK URLs, and sub-packages under gocloud.dev/blob
-  (https://godoc.org/gocloud.dev/blob#pkg-subdirectories)
+  See https://github.com/aivetech/gocloud.dev/concepts/urls/ for more background on
+  Go CDK URLs, and sub-packages under github.com/aivetech/gocloud.dev/blob
+  (https://godoc.org/github.com/aivetech/gocloud.dev/blob#pkg-subdirectories)
   for details on the blob.Bucket URL format.
 `
 

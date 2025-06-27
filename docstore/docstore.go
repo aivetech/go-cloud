@@ -26,10 +26,10 @@ import (
 	"sync"
 	"unicode/utf8"
 
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/oc"
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/oc"
 )
 
 // A Document is a set of field-value pairs. One or more fields, called the key
@@ -51,7 +51,7 @@ type Collection struct {
 	closed bool
 }
 
-const pkgName = "gocloud.dev/docstore"
+const pkgName = "github.com/aivetech/gocloud.dev/docstore"
 
 var (
 	latencyMeasure = oc.LatencyMeasure(pkgName)
@@ -158,7 +158,7 @@ func (l *ActionList) add(a *Action) *ActionList {
 
 // Create adds an action that creates a new document to the given ActionList, and
 // returns the ActionList. The document must not already exist; an error with code
-// AlreadyExists is returned if it does. (See gocloud.dev/gcerrors for more on error
+// AlreadyExists is returned if it does. (See github.com/aivetech/gocloud.dev/gcerrors for more on error
 // codes.)
 //
 // If the document doesn't have key fields, or the key fields are empty, meaning
@@ -179,7 +179,7 @@ func (l *ActionList) Create(doc Document) *ActionList {
 // returns the ActionList. The key fields of the doc argument must be set. The
 // document must already exist; an error with code NotFound is returned if it does
 // not (or possibly FailedPrecondition, if the doc argument has a non-nil revision).
-// (See gocloud.dev/gcerrors for more on error codes.)
+// (See github.com/aivetech/gocloud.dev/gcerrors for more on error codes.)
 //
 // See the Revisions section of the package documentation for how revisions are
 // handled.
@@ -224,7 +224,7 @@ func (l *ActionList) Delete(doc Document) *ActionList {
 // or zeroed, so for portable behavior doc should contain only the key fields.
 // If you plan to write the document back and let Docstore to perform optimistic
 // locking, include the revision field in fps. See more about revision at
-// https://godoc.org/gocloud.dev/docstore#hdr-Revisions.
+// https://godoc.org/github.com/aivetech/gocloud.dev/docstore#hdr-Revisions.
 func (l *ActionList) Get(doc Document, fps ...FieldPath) *ActionList {
 	return l.add(&Action{
 		kind:       driver.Get,
@@ -317,7 +317,7 @@ func (e ActionListError) Unwrap() error {
 // an error.
 //
 // The callback takes a parameter, asFunc, that converts its argument to
-// driver-specific types. See https://gocloud.dev/concepts/as for background
+// driver-specific types. See https://github.com/aivetech/gocloud.dev/concepts/as for background
 // information.
 func (l *ActionList) BeforeDo(f func(asFunc func(interface{}) bool) error) *ActionList {
 	l.beforeDo = f
@@ -660,7 +660,7 @@ func (c *Collection) StringToRevision(s string) (interface{}, error) {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (c *Collection) As(i interface{}) bool {
@@ -707,7 +707,7 @@ func wrapError(c driver.Collection, err error) error {
 }
 
 // ErrorAs converts i to driver-specific types. See
-// https://gocloud.dev/concepts/as/ for background information and the
+// https://github.com/aivetech/gocloud.dev/concepts/as/ for background information and the
 // driver package documentation for the specific types supported for
 // that driver.
 //

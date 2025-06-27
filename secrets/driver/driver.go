@@ -15,12 +15,12 @@
 // Package driver defines interfaces to be implemented by secrets drivers, which
 // will be used by the secrets package to interact with the underlying services.
 // Application code should use package secrets.
-package driver // import "gocloud.dev/secrets/driver"
+package driver // import "github.com/aivetech/gocloud.dev/secrets/driver"
 
 import (
 	"context"
 
-	"gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcerrors"
 )
 
 // Keeper holds the key information to encrypt a plain text message into a
@@ -42,7 +42,7 @@ type Keeper interface {
 	// ErrorAs allows drivers to expose driver-specific types for returned
 	// errors.
 	//
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	ErrorAs(err error, i any) bool
 
 	// ErrorCode should return a code that describes the error, which was returned

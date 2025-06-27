@@ -20,10 +20,10 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/aivetech/gocloud.dev/docstore"
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/docstore/drivertest"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/docstore/drivertest"
 )
 
 type harness struct{}

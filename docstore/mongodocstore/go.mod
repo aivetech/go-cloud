@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/docstore/mongodocstore
+module github.com/aivetech/gocloud.dev/docstore/mongodocstore
 
 go 1.24
 
@@ -20,7 +20,7 @@ require (
 	github.com/google/go-cmp v0.7.0
 	github.com/google/wire v0.6.0
 	go.mongodb.org/mongo-driver v1.17.3
-	gocloud.dev v0.41.0
+	github.com/aivetech/gocloud.dev v0.41.0
 )
 
 require (
@@ -79,4 +79,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace gocloud.dev => ../../
+replace github.com/aivetech/gocloud.dev => ../../

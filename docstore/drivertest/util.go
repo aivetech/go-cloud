@@ -18,8 +18,8 @@ import (
 	"math/rand"
 	"sync"
 
+	"github.com/aivetech/gocloud.dev/docstore/driver"
 	"github.com/google/uuid"
-	"gocloud.dev/docstore/driver"
 )
 
 // MakeUniqueStringDeterministicForTesting uses a specified seed value to

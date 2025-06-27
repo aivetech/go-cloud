@@ -21,10 +21,10 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/driver"
-	"gocloud.dev/pubsub/drivertest"
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
+	"github.com/aivetech/gocloud.dev/pubsub/drivertest"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	servicebus "github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus"
@@ -178,7 +178,7 @@ func (h *harness) MaxBatchSizes() (int, int) { return sendBatcherOpts.MaxBatchSi
 func (h *harness) SupportsMultipleSubscriptions() bool { return true }
 
 // Please run the TestConformance with an extended timeout since each test needs to perform CRUD for ServiceBus Topics and Subscriptions.
-// Example: C:\Go\bin\go.exe test -timeout 60s gocloud.dev/pubsub/azuresb -run ^TestConformance$
+// Example: C:\Go\bin\go.exe test -timeout 60s github.com/aivetech/gocloud.dev/pubsub/azuresb -run ^TestConformance$
 func TestConformance(t *testing.T) {
 	if !*setup.Record {
 		t.Skip("replaying is not yet supported for Azure pubsub")
@@ -322,7 +322,7 @@ func deleteSubscription(ctx context.Context, topicName, subscriptionName string,
 // AZURE_CLIENT_SECRET='secret' \
 // AZURE_CLIENT_ID=client_id_uud \
 // AZURE_TENANT_ID=tenant_id_uuid \
-// AZURE_SERVICEBUS_HOSTNAME=hostname go test -benchmem -run=^$ -bench ^BenchmarkAzureServiceBusPubSub$ gocloud.dev/pubsub/azuresb
+// AZURE_SERVICEBUS_HOSTNAME=hostname go test -benchmem -run=^$ -bench ^BenchmarkAzureServiceBusPubSub$ github.com/aivetech/gocloud.dev/pubsub/azuresb
 func BenchmarkAzureServiceBusPubSub(b *testing.B) {
 	const (
 		benchmarkTopicName        = "benchmark-topic"

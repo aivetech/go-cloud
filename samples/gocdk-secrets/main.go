@@ -24,22 +24,22 @@ import (
 	"log"
 	"os"
 
+	"github.com/aivetech/gocloud.dev/secrets"
 	"github.com/google/subcommands"
-	"gocloud.dev/secrets"
 
 	// Import the secrets driver packages we want to be able to open.
-	_ "gocloud.dev/secrets/awskms"
-	_ "gocloud.dev/secrets/azurekeyvault"
-	_ "gocloud.dev/secrets/gcpkms"
-	_ "gocloud.dev/secrets/hashivault"
-	_ "gocloud.dev/secrets/localsecrets"
+	_ "github.com/aivetech/gocloud.dev/secrets/awskms"
+	_ "github.com/aivetech/gocloud.dev/secrets/azurekeyvault"
+	_ "github.com/aivetech/gocloud.dev/secrets/gcpkms"
+	_ "github.com/aivetech/gocloud.dev/secrets/hashivault"
+	_ "github.com/aivetech/gocloud.dev/secrets/localsecrets"
 )
 
 const helpSuffix = `
 
-  See https://gocloud.dev/concepts/urls/ for more background on
-  Go CDK URLs, and sub-packages under gocloud.dev/secrets
-  (https://godoc.org/gocloud.dev/secrets#pkg-subdirectories)
+  See https://github.com/aivetech/gocloud.dev/concepts/urls/ for more background on
+  Go CDK URLs, and sub-packages under github.com/aivetech/gocloud.dev/secrets
+  (https://godoc.org/github.com/aivetech/gocloud.dev/secrets#pkg-subdirectories)
   for details on the secrets.Keeper URL format.
 `
 

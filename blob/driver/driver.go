@@ -15,7 +15,7 @@
 // Package driver defines interfaces to be implemented by blob drivers, which
 // will be used by the blob package to interact with the underlying services.
 // Application code should use package blob.
-package driver // import "gocloud.dev/blob/driver"
+package driver // import "github.com/aivetech/gocloud.dev/blob/driver"
 
 import (
 	"context"
@@ -24,7 +24,7 @@ import (
 	"strings"
 	"time"
 
-	"gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcerrors"
 )
 
 // ReaderOptions controls Reader behaviors.
@@ -256,12 +256,12 @@ type Bucket interface {
 	ErrorCode(error) gcerrors.ErrorCode
 
 	// As converts i to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	As(i any) bool
 
 	// ErrorAs allows drivers to expose driver-specific types for returned
 	// errors.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	ErrorAs(error, any) bool
 
 	// Attributes returns attributes for the blob. If the specified object does
@@ -372,7 +372,7 @@ type SignedURLOptions struct {
 	// BeforeSign is a callback that will be called before each call to the
 	// the underlying service's sign functionality.
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	BeforeSign func(asFunc func(any) bool) error
 }
 

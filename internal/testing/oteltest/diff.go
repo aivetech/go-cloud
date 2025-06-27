@@ -16,8 +16,9 @@ package oteltest
 
 import (
 	"fmt"
-	iotel "gocloud.dev/internal/otel"
 	"strings"
+
+	iotel "github.com/aivetech/gocloud.dev/internal/otel"
 
 	"go.opentelemetry.io/otel/attribute"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"

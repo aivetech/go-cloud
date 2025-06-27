@@ -21,12 +21,12 @@
 // For secrets.OpenKeeper, localsecrets registers for the scheme "base64key".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // localsecrets does not support any types for As.
-package localsecrets // import "gocloud.dev/secrets/localsecrets"
+package localsecrets // import "github.com/aivetech/gocloud.dev/secrets/localsecrets"
 
 import (
 	"context"
@@ -37,8 +37,8 @@ import (
 	"io"
 	"net/url"
 
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/secrets"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/secrets"
 	"golang.org/x/crypto/nacl/secretbox"
 )
 

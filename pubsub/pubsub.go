@@ -16,7 +16,7 @@
 // publish/subscribe systems. Subpackages contain driver implementations of
 // pubsub for supported services
 //
-// See https://gocloud.dev/howto/pubsub/ for a detailed how-to guide.
+// See https://github.com/aivetech/gocloud.dev/howto/pubsub/ for a detailed how-to guide.
 //
 // # At-most-once and At-least-once Delivery
 //
@@ -52,17 +52,17 @@
 //
 // All trace and metric names begin with the package import path.
 // The traces add the method name.
-// For example, "gocloud.dev/pubsub/Topic.Send".
+// For example, "github.com/aivetech/gocloud.dev/pubsub/Topic.Send".
 // The metrics are "completed_calls", a count of completed method calls by driver,
 // method and status (error code); and "latency", a distribution of method latency
 // by driver and method.
-// For example, "gocloud.dev/pubsub/latency".
+// For example, "github.com/aivetech/gocloud.dev/pubsub/latency".
 //
 // To enable trace collection in your application, see "Configure an Exporter" at
 // https://opentelemetry.io/docs/languages/go/getting-started/.
 // To enable metric collection in your application, see "Metrics" at
 // https://opentelemetry.io/docs/languages/go/metrics/.
-package pubsub // import "gocloud.dev/pubsub"
+package pubsub // import "github.com/aivetech/gocloud.dev/pubsub"
 
 import (
 	"context"
@@ -77,14 +77,14 @@ import (
 	"time"
 	"unicode/utf8"
 
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/openurl"
+	gcdkotel "github.com/aivetech/gocloud.dev/internal/otel"
+	"github.com/aivetech/gocloud.dev/internal/retry"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 	"github.com/googleapis/gax-go/v2"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/openurl"
-	gcdkotel "gocloud.dev/internal/otel"
-	"gocloud.dev/internal/retry"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -114,7 +114,7 @@ type Message struct {
 	// The callback will be called exactly once, before the message is sent.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	BeforeSend func(asFunc func(any) bool) error
 
 	// AfterSend is a callback used when sending a message. It will always be
@@ -124,7 +124,7 @@ type Message struct {
 	// If Send returns an error, AfterSend will not be called.
 	//
 	// asFunc converts its argument to driver-specific types.
-	// See https://gocloud.dev/concepts/as/ for background information.
+	// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 	AfterSend func(asFunc func(any) bool) error
 
 	// asFunc invokes driver.Message.AsFunc.
@@ -147,7 +147,7 @@ type Message struct {
 // Ack acknowledges the message, telling the server that it does not need to be
 // sent again to the associated Subscription. It will be a no-op for some
 // drivers; see
-// https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more info.
 //
 // Ack returns immediately, but the actual ack is sent in the background, and
@@ -167,7 +167,7 @@ func (m *Message) Ack() {
 //
 // Some services do not support Nack; for example, at-most-once services
 // can't redeliver a message. See
-// https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more info.
 func (m *Message) Nackable() bool {
 	return m.nackable
@@ -178,7 +178,7 @@ func (m *Message) Nackable() bool {
 //
 // Nack panics for some drivers, as Nack is meaningless when messages can't be
 // redelivered. You can call Nackable to determine if Nack is available. See
-// https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // fore more info.
 //
 // Nack returns immediately, but the actual nack is sent in the background,
@@ -203,7 +203,7 @@ func (m *Message) Nack() {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 // As panics unless it is called on a message obtained from Subscription.Receive.
@@ -295,7 +295,7 @@ func (t *Topic) Shutdown(ctx context.Context) (err error) {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (t *Topic) As(i any) bool {
@@ -305,7 +305,7 @@ func (t *Topic) As(i any) bool {
 // ErrorAs converts err to driver-specific types.
 // ErrorAs panics if i is nil or not a pointer.
 // ErrorAs returns false if err == nil.
-// See https://gocloud.dev/concepts/as/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information.
 func (t *Topic) ErrorAs(err error, i any) bool {
 	return gcerr.ErrorAs(err, i, t.driver.ErrorAs)
 }
@@ -344,7 +344,7 @@ func newTopic(d driver.Topic, opts *batcher.Options) *Topic {
 	return t
 }
 
-const pkgName = "gocloud.dev/pubsub"
+const pkgName = "github.com/aivetech/gocloud.dev/pubsub"
 
 // Subscription receives published messages.
 type Subscription struct {
@@ -709,7 +709,7 @@ func (s *Subscription) Shutdown(ctx context.Context) (err error) {
 }
 
 // As converts i to driver-specific types.
-// See https://gocloud.dev/concepts/as/ for background information, the "As"
+// See https://github.com/aivetech/gocloud.dev/concepts/as/ for background information, the "As"
 // examples in this package for examples, and the driver package
 // documentation for the specific types supported for that driver.
 func (s *Subscription) As(i any) bool {
@@ -830,7 +830,7 @@ type SubscriptionURLOpener interface {
 // URLMux is a URL opener multiplexer. It matches the scheme of the URLs
 // against a set of registered schemes and calls the opener that matches the
 // URL's scheme.
-// See https://gocloud.dev/concepts/urls/ for more information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for more information.
 //
 // The zero value is a multiplexer with no registered schemes.
 type URLMux struct {
@@ -916,7 +916,7 @@ func DefaultURLMux() *URLMux {
 
 // OpenTopic opens the Topic identified by the URL given.
 // See the URLOpener documentation in driver subpackages for
-// details on supported URL formats, and https://gocloud.dev/concepts/urls
+// details on supported URL formats, and https://github.com/aivetech/gocloud.dev/concepts/urls
 // for more information.
 func OpenTopic(ctx context.Context, urlstr string) (*Topic, error) {
 	return defaultURLMux.OpenTopic(ctx, urlstr)
@@ -924,7 +924,7 @@ func OpenTopic(ctx context.Context, urlstr string) (*Topic, error) {
 
 // OpenSubscription opens the Subscription identified by the URL given.
 // See the URLOpener documentation in driver subpackages for
-// details on supported URL formats, and https://gocloud.dev/concepts/urls
+// details on supported URL formats, and https://github.com/aivetech/gocloud.dev/concepts/urls
 // for more information.
 func OpenSubscription(ctx context.Context, urlstr string) (*Subscription, error) {
 	return defaultURLMux.OpenSubscription(ctx, urlstr)

@@ -13,18 +13,18 @@
 // limitations under the License.
 
 // Package gcpcloud contains Wire providers for GCP services.
-package gcpcloud // import "gocloud.dev/gcp/gcpcloud"
+package gcpcloud // import "github.com/aivetech/gocloud.dev/gcp/gcpcloud"
 
 import (
+	"github.com/aivetech/gocloud.dev/blob/gcsblob"
+	"github.com/aivetech/gocloud.dev/docstore/gcpfirestore"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/gcp/cloudsql"
+	"github.com/aivetech/gocloud.dev/pubsub/gcppubsub"
+	"github.com/aivetech/gocloud.dev/runtimevar/gcpruntimeconfig"
+	"github.com/aivetech/gocloud.dev/secrets/gcpkms"
+	"github.com/aivetech/gocloud.dev/server/sdserver"
 	"github.com/google/wire"
-	"gocloud.dev/blob/gcsblob"
-	"gocloud.dev/docstore/gcpfirestore"
-	"gocloud.dev/gcp"
-	"gocloud.dev/gcp/cloudsql"
-	"gocloud.dev/pubsub/gcppubsub"
-	"gocloud.dev/runtimevar/gcpruntimeconfig"
-	"gocloud.dev/secrets/gcpkms"
-	"gocloud.dev/server/sdserver"
 )
 
 // GCP is a Wire provider set that includes all Google Cloud Platform services

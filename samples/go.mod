@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module gocloud.dev/samples
+module github.com/aivetech/gocloud.dev/samples
 
 go 1.24
 
@@ -30,12 +30,12 @@ require (
 	github.com/gorilla/mux v1.8.1
 	github.com/streadway/amqp v1.0.0
 	go.opencensus.io v0.24.0
-	gocloud.dev v0.41.0
-	gocloud.dev/docstore/mongodocstore v0.41.0
-	gocloud.dev/pubsub/kafkapubsub v0.41.0
-	gocloud.dev/pubsub/natspubsub v0.41.0
-	gocloud.dev/pubsub/rabbitpubsub v0.41.0
-	gocloud.dev/secrets/hashivault v0.41.0
+	github.com/aivetech/gocloud.dev v0.41.0
+	github.com/aivetech/gocloud.dev/docstore/mongodocstore v0.41.0
+	github.com/aivetech/gocloud.dev/pubsub/kafkapubsub v0.41.0
+	github.com/aivetech/gocloud.dev/pubsub/natspubsub v0.41.0
+	github.com/aivetech/gocloud.dev/pubsub/rabbitpubsub v0.41.0
+	github.com/aivetech/gocloud.dev/secrets/hashivault v0.41.0
 	google.golang.org/genproto v0.0.0-20250324211829-b45e905df463
 	gopkg.in/pipe.v2 v2.0.0-20140414041502-3c2ca4d52544
 )
@@ -184,14 +184,14 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace gocloud.dev => ../
+replace github.com/aivetech/gocloud.dev => ../
 
-replace gocloud.dev/docstore/mongodocstore => ../docstore/mongodocstore
+replace github.com/aivetech/gocloud.dev/docstore/mongodocstore => ../docstore/mongodocstore
 
-replace gocloud.dev/pubsub/kafkapubsub => ../pubsub/kafkapubsub
+replace github.com/aivetech/gocloud.dev/pubsub/kafkapubsub => ../pubsub/kafkapubsub
 
-replace gocloud.dev/pubsub/natspubsub => ../pubsub/natspubsub
+replace github.com/aivetech/gocloud.dev/pubsub/natspubsub => ../pubsub/natspubsub
 
-replace gocloud.dev/pubsub/rabbitpubsub => ../pubsub/rabbitpubsub
+replace github.com/aivetech/gocloud.dev/pubsub/rabbitpubsub => ../pubsub/rabbitpubsub
 
-replace gocloud.dev/secrets/hashivault => ../secrets/hashivault
+replace github.com/aivetech/gocloud.dev/secrets/hashivault => ../secrets/hashivault

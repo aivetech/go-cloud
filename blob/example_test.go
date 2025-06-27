@@ -22,16 +22,16 @@ import (
 	"os"
 
 	"cloud.google.com/go/storage"
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/fileblob"
+	_ "github.com/aivetech/gocloud.dev/blob/gcsblob"
+	_ "github.com/aivetech/gocloud.dev/blob/s3blob"
 	"github.com/aws/aws-sdk-go/aws/awserr"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/fileblob"
-	_ "gocloud.dev/blob/gcsblob"
-	_ "gocloud.dev/blob/s3blob"
 )
 
 func ExampleBucket_NewReader() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 	var bucket *blob.Bucket
 
@@ -51,8 +51,8 @@ func ExampleBucket_NewReader() {
 }
 
 func ExampleBucket_NewRangeReader() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 	var bucket *blob.Bucket
 
@@ -69,8 +69,8 @@ func ExampleBucket_NewRangeReader() {
 }
 
 func ExampleBucket_NewWriter() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 	var bucket *blob.Bucket
 
@@ -91,8 +91,8 @@ func ExampleBucket_NewWriter() {
 }
 
 func ExampleBucket_NewWriter_cancel() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 	var bucket *blob.Bucket
 
@@ -118,8 +118,8 @@ func ExampleBucket_NewWriter_cancel() {
 }
 
 func ExampleBucket_Delete() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	ctx := context.Background()
 	var bucket *blob.Bucket
 
@@ -163,7 +163,7 @@ func ExampleBucket_ErrorAs() {
 	// This example is specific to the s3blob implementation; it demonstrates
 	// access to the underlying awserr.Error type.
 	// The types exposed for ErrorAs by s3blob are documented in
-	// https://godoc.org/gocloud.dev/blob/s3blob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/s3blob#hdr-As
 
 	ctx := context.Background()
 
@@ -366,7 +366,7 @@ func ExampleBucket_As() {
 	// This example is specific to the gcsblob implementation; it demonstrates
 	// access to the underlying cloud.google.com/go/storage.Client type.
 	// The types exposed for As by gcsblob are documented in
-	// https://godoc.org/gocloud.dev/blob/gcsblob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/gcsblob#hdr-As
 
 	// This URL will open the bucket "my-bucket" using default credentials.
 	ctx := context.Background()
@@ -393,7 +393,7 @@ func ExampleWriterOptions() {
 	// This example is specific to the gcsblob implementation; it demonstrates
 	// access to the underlying cloud.google.com/go/storage.Writer type.
 	// The types exposed for As by gcsblob are documented in
-	// https://godoc.org/gocloud.dev/blob/gcsblob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/gcsblob#hdr-As
 
 	ctx := context.Background()
 
@@ -421,7 +421,7 @@ func ExampleListObject_As() {
 	// This example is specific to the gcsblob implementation; it demonstrates
 	// access to the underlying cloud.google.com/go/storage.ObjectAttrs type.
 	// The types exposed for As by gcsblob are documented in
-	// https://godoc.org/gocloud.dev/blob/gcsblob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/gcsblob#hdr-As
 
 	ctx := context.Background()
 
@@ -452,7 +452,7 @@ func ExampleListOptions() {
 	// This example is specific to the gcsblob implementation; it demonstrates
 	// access to the underlying cloud.google.com/go/storage.Query type.
 	// The types exposed for As by gcsblob are documented in
-	// https://godoc.org/gocloud.dev/blob/gcsblob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/gcsblob#hdr-As
 
 	ctx := context.Background()
 
@@ -485,8 +485,8 @@ func ExampleListOptions() {
 }
 
 func ExamplePrefixedBucket() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	var bucket *blob.Bucket
 
 	// Wrap the bucket using blob.PrefixedBucket.
@@ -502,8 +502,8 @@ func ExamplePrefixedBucket() {
 }
 
 func ExampleSingleKeyBucket() {
-	// PRAGMA: This example is used on gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
-	// PRAGMA: On gocloud.dev, hide lines until the next blank line.
+	// PRAGMA: This example is used on github.com/aivetech/gocloud.dev; PRAGMA comments adjust how it is shown and can be ignored.
+	// PRAGMA: On github.com/aivetech/gocloud.dev, hide lines until the next blank line.
 	var bucket *blob.Bucket
 
 	// Wrap the bucket using blob.SingleKeyBucket.
@@ -521,7 +521,7 @@ func ExampleReader_As() {
 	// This example is specific to the gcsblob implementation; it demonstrates
 	// access to the underlying cloud.google.com/go/storage.Reader type.
 	// The types exposed for As by gcsblob are documented in
-	// https://godoc.org/gocloud.dev/blob/gcsblob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/gcsblob#hdr-As
 
 	ctx := context.Background()
 
@@ -548,7 +548,7 @@ func ExampleAttributes_As() {
 	// This example is specific to the gcsblob implementation; it demonstrates
 	// access to the underlying cloud.google.com/go/storage.ObjectAttrs type.
 	// The types exposed for As by gcsblob are documented in
-	// https://godoc.org/gocloud.dev/blob/gcsblob#hdr-As
+	// https://godoc.org/github.com/aivetech/gocloud.dev/blob/gcsblob#hdr-As
 	ctx := context.Background()
 
 	b, err := blob.OpenBucket(ctx, "gs://my-bucket")

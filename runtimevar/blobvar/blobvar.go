@@ -23,14 +23,14 @@
 // variable "BLOBVAR_BUCKET_URL".
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
 // blobvar exposes the following types for As:
 //   - Snapshot: Not supported.
 //   - Error: error, which can be passed to blob.ErrorAs.
-package blobvar // import "gocloud.dev/runtimevar/blobvar"
+package blobvar // import "github.com/aivetech/gocloud.dev/runtimevar/blobvar"
 
 import (
 	"bytes"
@@ -43,10 +43,10 @@ import (
 	"sync"
 	"time"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/runtimevar"
-	"gocloud.dev/runtimevar/driver"
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/runtimevar"
+	"github.com/aivetech/gocloud.dev/runtimevar/driver"
 )
 
 func init() {

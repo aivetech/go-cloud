@@ -21,9 +21,9 @@ import (
 	"testing"
 	"testing/fstest"
 
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/memblob"
 	"github.com/google/go-cmp/cmp"
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/memblob"
 )
 
 var fsFiles = []string{

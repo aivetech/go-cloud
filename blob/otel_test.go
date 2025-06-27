@@ -20,9 +20,9 @@ import (
 	"testing"
 	"time"
 
-	"gocloud.dev/blob"
-	"gocloud.dev/blob/memblob"
-	"gocloud.dev/internal/testing/oteltest"
+	"github.com/aivetech/gocloud.dev/blob"
+	"github.com/aivetech/gocloud.dev/blob/memblob"
+	"github.com/aivetech/gocloud.dev/internal/testing/oteltest"
 )
 
 func TestOpenTelemetry(t *testing.T) {

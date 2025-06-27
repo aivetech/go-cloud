@@ -22,11 +22,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/aivetech/gocloud.dev/internal/testing/setup"
+	"github.com/aivetech/gocloud.dev/secrets"
+	"github.com/aivetech/gocloud.dev/secrets/driver"
+	"github.com/aivetech/gocloud.dev/secrets/drivertest"
 	"github.com/hashicorp/vault/api"
-	"gocloud.dev/internal/testing/setup"
-	"gocloud.dev/secrets"
-	"gocloud.dev/secrets/driver"
-	"gocloud.dev/secrets/drivertest"
 )
 
 // To run these tests against a real Vault server, first run ./localvault.sh.

@@ -32,7 +32,7 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // # As
 //
@@ -60,7 +60,7 @@
 // https://cloud.google.com/firestore/docs/query-data/indexing for details.
 //
 // See https://cloud.google.com/firestore/docs/query-data/queries for more information on Firestore queries.
-package gcpfirestore // import "gocloud.dev/docstore/gcpfirestore"
+package gcpfirestore // import "github.com/aivetech/gocloud.dev/docstore/gcpfirestore"
 
 import (
 	"bytes"
@@ -74,13 +74,13 @@ import (
 
 	vkit "cloud.google.com/go/firestore/apiv1"
 	pb "cloud.google.com/go/firestore/apiv1/firestorepb"
+	"github.com/aivetech/gocloud.dev/docstore"
+	"github.com/aivetech/gocloud.dev/docstore/driver"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/useragent"
 	"github.com/google/wire"
-	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/driver"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -192,7 +192,7 @@ func OpenCollection(client *vkit.Client, collResourceID, nameField string, opts 
 //
 // For the collection to be usable with Query.Delete and Query.Update, nameFunc
 // must work with both map and struct types representing the same underlying
-// data structure. See gocloud.dev/docstore/drivertest.HighScoreKey for an example.
+// data structure. See github.com/aivetech/gocloud.dev/docstore/drivertest.HighScoreKey for an example.
 func OpenCollectionWithNameFunc(client *vkit.Client, collResourceID string, nameFunc func(docstore.Document) string, opts *Options) (*docstore.Collection, error) {
 	c, err := newCollection(client, collResourceID, "", nameFunc, opts)
 	if err != nil {

@@ -25,7 +25,7 @@
 // https://cloud.google.com/docs/authentication/production.
 // To customize the URL opener, or for more details on the URL format,
 // see URLOpener.
-// See https://gocloud.dev/concepts/urls/ for background information.
+// See https://github.com/aivetech/gocloud.dev/concepts/urls/ for background information.
 //
 // GCP Pub/Sub emulator is supported as per https://cloud.google.com/pubsub/docs/emulator
 // So, when environment variable 'PUBSUB_EMULATOR_HOST' is set
@@ -35,7 +35,7 @@
 //
 // GCP Pub/Sub supports at-least-once semantics; applications must
 // call Message.Ack after processing a message, or it will be redelivered.
-// See https://godoc.org/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
+// See https://godoc.org/github.com/aivetech/gocloud.dev/pubsub#hdr-At_most_once_and_At_least_once_Delivery
 // for more background.
 //
 // # As
@@ -47,7 +47,7 @@
 //   - Message.AfterSend: *string for the pb.PublishResponse.MessageIds entry corresponding to the message.
 //   - Message: *pb.PubsubMessage, *pb.ReceivedMessage
 //   - Error: *google.golang.org/grpc/status.Status
-package gcppubsub // import "gocloud.dev/pubsub/gcppubsub"
+package gcppubsub // import "github.com/aivetech/gocloud.dev/pubsub/gcppubsub"
 
 import (
 	"context"
@@ -63,14 +63,14 @@ import (
 
 	raw "cloud.google.com/go/pubsub/apiv1"
 	pb "cloud.google.com/go/pubsub/apiv1/pubsubpb"
+	"github.com/aivetech/gocloud.dev/gcerrors"
+	"github.com/aivetech/gocloud.dev/gcp"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/useragent"
+	"github.com/aivetech/gocloud.dev/pubsub"
+	"github.com/aivetech/gocloud.dev/pubsub/batcher"
+	"github.com/aivetech/gocloud.dev/pubsub/driver"
 	"github.com/google/wire"
-	"gocloud.dev/gcerrors"
-	"gocloud.dev/gcp"
-	"gocloud.dev/internal/gcerr"
-	"gocloud.dev/internal/useragent"
-	"gocloud.dev/pubsub"
-	"gocloud.dev/pubsub/batcher"
-	"gocloud.dev/pubsub/driver"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

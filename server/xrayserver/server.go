@@ -14,20 +14,20 @@
 
 // Package xrayserver provides the diagnostic hooks for a server using
 // AWS X-Ray.
-package xrayserver // import "gocloud.dev/server/xrayserver"
+package xrayserver // import "github.com/aivetech/gocloud.dev/server/xrayserver"
 
 import (
 	"fmt"
 	"os"
 
 	exporter "contrib.go.opencensus.io/exporter/aws"
+	"github.com/aivetech/gocloud.dev/server"
+	"github.com/aivetech/gocloud.dev/server/requestlog"
 	"github.com/aws/aws-sdk-go/aws/client"
 	"github.com/aws/aws-sdk-go/service/xray"
 	"github.com/aws/aws-sdk-go/service/xray/xrayiface"
 	"github.com/google/wire"
 	"go.opencensus.io/trace"
-	"gocloud.dev/server"
-	"gocloud.dev/server/requestlog"
 )
 
 // Set is a Wire provider set that provides the diagnostic hooks for

@@ -19,7 +19,7 @@ import (
 	"io"
 	"testing"
 
-	"gocloud.dev/internal/gcerr"
+	"github.com/aivetech/gocloud.dev/internal/gcerr"
 )
 
 type wrappedErr struct {
